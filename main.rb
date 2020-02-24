@@ -103,9 +103,9 @@ puts "final score: " + final_score.to_s
 fileout = File.open(filename.to_s.split('/')[1].split('.txt')[0] + ".out", "w+")
 fileout.write(wgt_libs.length.to_s + "\n")
 
-final_libs.each_with_index do |lib, index|
-  fileout.write(index.to_s + " " + libs[index][3].length.to_s + "\n")
-  libs[index][3].each do |book|
+final_libs.each do |lib|
+  fileout.write(lib.to_s + " " + libs[lib][3].length.to_s + "\n")
+  libs[lib][3].each do |book|
     fileout.write(book.to_s + " ")
   end
   fileout.write("\n")
